@@ -10,7 +10,7 @@ ImageConcat development based on the GM, used to implement the PNG image concat,
 ImageConcat是基于gm开发，首先安装[gm](https://github.com/aheckmann/gm)
 
 ```
-   npm install gm 
+npm install gm 
 ```
 
 **注意**：gm需要安装ImageMagick或者GraphicMagick,详情请看gm
