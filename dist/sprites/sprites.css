@@ -1,0 +1,70 @@
+.babyFade0{
+	background:url(./dist/sprites/all.min.png) 0 0;
+	width:41;
+	height:46;
+}
+.babyFade1{
+	background:url(./dist/sprites/all.min.png) 41 0;
+	width:41;
+	height:46;
+}
+.babyFade2{
+	background:url(./dist/sprites/all.min.png) 82 0;
+	width:41;
+	height:46;
+}
+.babyFade3{
+	background:url(./dist/sprites/all.min.png) 123 0;
+	width:41;
+	height:46;
+}
+.babyFade4{
+	background:url(./dist/sprites/all.min.png) 164 0;
+	width:41;
+	height:46;
+}
+.babyFade5{
+	background:url(./dist/sprites/all.min.png) 205 0;
+	width:41;
+	height:46;
+}
+.bigEat0{
+	background:url(./dist/sprites/all.min.png) 251 0;
+	width:46;
+	height:55;
+}
+.bigEat1{
+	background:url(./dist/sprites/all.min.png) 297 0;
+	width:46;
+	height:55;
+}
+.bigEat2{
+	background:url(./dist/sprites/all.min.png) 343 0;
+	width:46;
+	height:55;
+}
+.bigEat3{
+	background:url(./dist/sprites/all.min.png) 389 0;
+	width:46;
+	height:55;
+}
+.bigEat4{
+	background:url(./dist/sprites/all.min.png) 435 0;
+	width:46;
+	height:55;
+}
+.bigEat5{
+	background:url(./dist/sprites/all.min.png) 481 0;
+	width:46;
+	height:55;
+}
+.bigEat6{
+	background:url(./dist/sprites/all.min.png) 527 0;
+	width:46;
+	height:55;
+}
+.bigEat7{
+	background:url(./dist/sprites/all.min.png) 573 0;
+	width:46;
+	height:55;
+}

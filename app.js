@@ -6,10 +6,10 @@ var gm = require('gm').subClass({imageMagick:true,graphicsMagick:true});
 var config ={
 	source:'./dist/sprites/',
 	imgDir:'dist/sprites/',
-	dataType:'json',
+	dataType:'css,json',
 	dataDir:'dist/sprites/',
 	direction:1, //1 horizontial 0 vertical.
-	prefixer:['babyFade','bigEat'],//'babyFade','bigEat'
+	prefixer:[],//'babyFade','bigEat'
 	suffix:'.min',
 }
 
@@ -54,8 +54,6 @@ function init(){
 				}
 			}
 
-			//console.log('spritesMode:'+JSON.stringify(spritesMode));
-
 			merge();
 			mergeData();
 		}
@@ -86,6 +84,7 @@ function mergeData(){
 
 	for(var item in sprites){
 		if(isByPrefixer){
+			
 			for(var s in sprites[item]){
 				setupQueue(s,item);
 			}
@@ -94,6 +93,8 @@ function mergeData(){
 		}
 	}
 
+	
+	
 	function setupQueue(s,cate){
 		var filePath = path.join(config.source,s+'.png');
 		taskQueue.push({cate:cate,s:s,path:filePath});
@@ -129,13 +130,58 @@ function mergeData(){
 
 
 function onTaskQueue(){
-	var json = JSON.stringify(sprites);
-	fs.writeFile(path.join(config.dataDir,'data.json'),json,'utf8',function(err){
-		if(err)
-			throw err;
-		else
-			console.log('======JSON SAVED!======');
-	})
+
+	var chunk="",_path;
+
+	if(config.dataType.match(/css/)){
+		for(i in sprites){
+			if(isByPrefixer){
+				for(var s  in sprites[i]){
+					chunk += 
+`.${s}{
+	background:url(${config.source+i+config.suffix+'.png'}) ${sprites[i][s]['x']} ${sprites[i][s]['y']};
+	width:${sprites[i][s]['w']};
+	height:${sprites[i][s]['h']};
+}`+'\n';
+				}
+			}else{
+				chunk += 
+`.${i}{
+	background:url(${config.source+'all'+config.suffix+'.png'}) ${sprites[i]['x']} ${sprites[i]['y']};
+	width:${sprites[i]['w']};
+	height:${sprites[i]['h']};
+}`+'\n';
+			}
+		}
+
+		_path = path.join(config.dataDir,'sprites.css');
+		run(_path,chunk,'CSS');
+	}
+
+	chunk = "";
+	if(config.dataType.match(/json/)){
+		for(var item in sprites){
+		if(isByPrefixer){
+			sprites[item]['src'] = config.imgDir+item+config.suffix+'.png';
+			console.log('ccc'+sprites[item]['src'])
+			}else{
+				sprites['src'] = config.imgDir+'all'+config.suffix+'.png';
+			}
+		}
+	
+		chunk = JSON.stringify(sprites);
+		_path = path.join(config.dataDir,'data.json');
+		run(_path,chunk,'JSON');
+	}
+
+	function run(path,chunk,type){
+		fs.writeFile(path,chunk,'utf8',function(err){
+			if(err)
+				throw err;
+			else
+				console.log('======'+type+' SAVED!======');
+		})
+	}
 }
 
 
@@ -152,7 +198,7 @@ function mergeImgs(fileNames,animName){
 	//.type('Optimize')
 	//.quality(5)//[0~100]
 	.background('transparent') //解决在图片尺寸不一致的时候空缺的地方默认会有白底
-	.write(config.source+(animName || 'all')+config.suffix+'.png',function(err){
+	.write(config.imgDir+(animName || 'all')+config.suffix+'.png',function(err){
 		if(err)
 			throw err;
 		else
