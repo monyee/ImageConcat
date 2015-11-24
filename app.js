@@ -6,10 +6,10 @@ var gm = require('gm').subClass({imageMagick:true,graphicsMagick:true});
 var config ={
 	source:'./dist/sprites/',
 	imgDir:'dist/sprites/',
-	dataType:'css,json',
+	dataType:'css,json',//export css/json
 	dataDir:'dist/sprites/',
 	direction:1, //1 horizontial 0 vertical.
-	prefixer:[],//'babyFade','bigEat'
+	prefixer:['babyFade','bigEat'],//'babyFade','bigEat'
 	suffix:'.min',
 }
 
