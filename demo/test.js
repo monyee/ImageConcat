@@ -1,4 +1,4 @@
-var ic = require('./imageConcat');
+var ic = require('../imageConcat');
 ic.init({
     source:'./dist/sprites/',
     imgDir:'dist/sprites/',
