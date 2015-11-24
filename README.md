@@ -1,8 +1,5 @@
-# ImageConcat
 
-
-
-### ImageConcat 基于GM开发，用于实现png图片的拼接，可以方便的生成sprite精灵图片，并导出json、css数据
+ImageConcat development based on the GM, used to implement the PNG image stitching, can facilitate the generation of Sprite Sprite, and export the json data, CSS
 
 
 
@@ -10,18 +7,22 @@
 var config ={
 	source:'./dist/sprites/',
 	imgDir:'dist/sprites/',
-	dataType:'json,css', //同时生成json、css，或只生一个
+	dataType:'json,css', 
 	dataDir:'dist/sprites/',
-	direction:1, //1 horizontial 0 vertical.
-	prefixer:['babyFade','bigEat'],//根据前缀生成的多个sprite图片,如果不写将全部图片生成到一张图中
+	direction:1,
+	prefixer:['babyFade','bigEat'],
 	suffix:'.min',
 }
 ```
 
+#### source: 图片资源路径
+#### imgDir: 导出图片的路径
+#### dataType: 同时生成json、css，或只生成一个
+#### dataDir:  数据生成的地址
+#### direction: 排列方式 1 horizontial 0 vertical.
+#### prefixer: 根据前缀生成的多个sprite图片,如果不写将全部图片生成到一张图中
 
 ### 生成JSON数据
-
-
 
 ```
   {
@@ -93,20 +94,31 @@ var config ={
 ```
 
 
-### 运行
+### Start
+ImageConcat是基于gm开发，首先安装[gm](https://github.com/aheckmann/gm)
+```
+   npm install gm 
+```
+注意：gm需要安装ImageMagick或者GraphicMagick,详情请看gm
+
+
+ImageConcat 安装
 
 ```
-First download and install GraphicsMagick or ImageMagick. In Mac OS X, you can simply use Homebrew and do:
+npm install imageConcat
+```
 
-brew install imagemagick
-brew install graphicsmagick
-If you want WebP support with ImageMagick, you must add the WebP option:
+运行：
 
-brew install imagemagick --with-webp
-then either use npm:
+```
+var ic = require('imageConcat');
+ic.init({
+    source:'./dist/sprites/',
+    imgDir:'dist/sprites/',
+    dataType:'json,css', 
+    dataDir:'dist/sprites/',
+    direction:1,
+    prefixer:['babyFade','bigEat'],
+});
 
-npm install gm
-or clone the repo:
-
-git clone git://github.com/aheckmann/gm.git
 ```

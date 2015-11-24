@@ -1,8 +1,8 @@
 {
   "name": "imageconcat",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "```\r var config ={\r \tsource:'./dist/sprites/',\r \timgDir:'dist/sprites/',\r \tdataType:'json',\r \tdataDir:'dist/sprites/',\r \tdirection:1, //1 horizontial 0 vertical.\r \tprefixer:['babyFade','bigEat'],//生成的sprite图片的前缀\r \tsuffix:'.min',\r }\r ```",
-  "main": "app.js",
+  "main": "imageConcat.js",
   "scripts": {
     "test": "imageConcat export json image sprite"
   },
