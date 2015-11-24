@@ -15,12 +15,12 @@ var config ={
 }
 ```
 
-#### source: 图片资源路径
-#### imgDir: 导出图片的路径
-#### dataType: 同时生成json、css，或只生成一个
-#### dataDir:  数据生成的地址
-#### direction: 排列方式 1 horizontial 0 vertical.
-#### prefixer: 根据前缀生成的多个sprite图片,如果不写将全部图片生成到一张图中
+####### source: 图片资源路径
+####### imgDir: 导出图片的路径
+####### dataType: 同时生成json、css，或只生成一个
+####### dataDir:  数据生成的地址
+####### direction: 排列方式 1 horizontial 0 vertical.
+####### prefixer: 根据前缀生成的多个sprite图片,如果不写将全部图片生成到一张图中
 
 ### 生成JSON数据
 
