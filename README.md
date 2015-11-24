@@ -1,8 +1,8 @@
 # ImageConcat
 
-##ImageConcat 基于GM开发，用于实现图片的拼接，可以方便的生成sprite精灵图片，并导出json数据
+###ImageConcat 基于GM开发，用于实现图片的拼接，可以方便的生成sprite精灵图片，并导出json数据
 
-[code]
+```
 var config ={
 	source:'./dist/sprites/',
 	imgDir:'dist/sprites/',
@@ -12,11 +12,11 @@ var config ={
 	prefixer:['babyFade','bigEat'],//生成的sprite图片的前缀
 	suffix:'.min',
 }
-[code]
+```
 
 
-##生成JSON数据
-[code]
+###生成JSON数据
+```
   {
     "babyFade": {
         "babyFade0": {
@@ -58,6 +58,4 @@ var config ={
         }
     }
 }
-
-
-[code]
+```
