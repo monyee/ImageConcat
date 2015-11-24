@@ -1,24 +1,27 @@
 
-### ImageConcat development based on the GM, used to implement the PNG image stitching, can facilitate the generation of Sprite Sprite, and export the json data, CSS ###
+# ImageConcat
+
+ImageConcat development based on the GM, used to implement the PNG image stitching, can facilitate the generation of Sprite Sprite, and export the json data, CSS ###
 
 ***
 
-### Start
+## Start
+
 ImageConcat是基于gm开发，首先安装[gm](https://github.com/aheckmann/gm)
+
 ```
    npm install gm 
 ```
+
 **注意**：gm需要安装ImageMagick或者GraphicMagick,详情请看gm
->
 
-
-ImageConcat 安装
+## ImageConcat 安装
 
 ```
 npm install imageConcat
 ```
 
-运行：
+## 运行：
 
 ```
 var ic = require('imageConcat');
@@ -42,7 +45,7 @@ ic.init({
 
 ![demo](https://raw.githubusercontent.com/monyee/ImageConcat/master/demo/demo.png)
 
-### 生成JSON数据
+### 生成的JSON数据
 
 ```
   {
@@ -85,9 +88,7 @@ ic.init({
 ```
 
 
-### 生成CSS
-
-
+### 生成的CSS
 
 ```
 .babyFade0{
