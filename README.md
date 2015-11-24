@@ -1,9 +1,7 @@
 
 # ImageConcat
 
-ImageConcat development based on the GM, used to implement the PNG image stitching, can facilitate the generation of Sprite Sprite, and export the json data, CSS ###
-
-***
+ImageConcat development based on the GM, used to implement the PNG image stitching, can facilitate the generation of Sprite Sprite, and export the json data, CSS
 
 ## Start
 
