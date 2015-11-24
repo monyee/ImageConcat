@@ -1,6 +1,10 @@
 # ImageConcat
 
-###ImageConcat 基于GM开发，用于实现图片的拼接，可以方便的生成sprite精灵图片，并导出json数据
+
+
+### ImageConcat 基于GM开发，用于实现图片的拼接，可以方便的生成sprite精灵图片，并导出json数据
+
+
 
 ```
 var config ={
@@ -15,7 +19,10 @@ var config ={
 ```
 
 
-###生成JSON数据
+### 生成JSON数据
+
+
+
 ```
   {
     "babyFade": {
@@ -58,4 +65,23 @@ var config ={
         }
     }
 }
+```
+
+
+### 运行
+
+```
+First download and install GraphicsMagick or ImageMagick. In Mac OS X, you can simply use Homebrew and do:
+
+brew install imagemagick
+brew install graphicsmagick
+If you want WebP support with ImageMagick, you must add the WebP option:
+
+brew install imagemagick --with-webp
+then either use npm:
+
+npm install gm
+or clone the repo:
+
+git clone git://github.com/aheckmann/gm.git
 ```
