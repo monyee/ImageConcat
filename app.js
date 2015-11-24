@@ -33,7 +33,12 @@ if(isByPrefixer){
 }
 
 
-function init(){
+function init(_config){
+	if(_config){
+		for(var i in _config){
+			config[i]= _config[i];
+		}
+	}
 	fs.readdir(config.source,function(err,files){
 		if(err){
 			throw err;
@@ -243,7 +248,6 @@ function updateDimension(w,h,catename){
 	}
 }
 
-
-init();
+module.exports.init = init;
 
 
